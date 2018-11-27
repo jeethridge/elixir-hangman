@@ -39,7 +39,7 @@ defmodule GameTest do
   end
 
   test "a good guess is recognized" do
-    game = Game.new_game("wible")
+    game = Game.new_game("wibble")
     {game, _tally} = Game.make_move(game, "w")
     assert game.game_state == :good_guess
     assert game.turns_left == 7
@@ -47,16 +47,12 @@ defmodule GameTest do
 
 
   test "a guessed word is a won game" do
-    game = Game.new_game("baz")
-    {game, _tally} = Game.make_move(game, "b")
-    assert game.game_state == :good_guess
-    assert game.turns_left == 7
-    {game, _tally} = Game.make_move(game, "a")
-    assert game.game_state == :good_guess
-    assert game.turns_left == 7
-    {game, _tally} = Game.make_move(game, "z")
-    assert game.game_state == :won
-    assert game.turns_left == 7
+    moves = String.codepoints("wible")
+    game = Game.new_game("wibble")
+    final_game = Enum.reduce(moves, game, fn (move, game) ->
+      Game.make_move(game, move) |> elem(0) end)
+    assert final_game.game_state == :won
+    assert final_game.turns_left == 7
   end
 
   test "a bad guess is recognized" do
@@ -67,28 +63,12 @@ defmodule GameTest do
   end
 
   test "7 bad guesses loses the game" do
+    moves = String.codepoints("abcdefg")
     game = Game.new_game("w")
-    { game, _tally } = Game.make_move(game, "a")
-    assert game.game_state == :bad_guess
-    assert game.turns_left == 6
-    { game, _tally } = Game.make_move(game, "b")
-    assert game.game_state == :bad_guess
-    assert game.turns_left == 5
-    { game, _tally } = Game.make_move(game, "c")
-    assert game.game_state == :bad_guess
-    assert game.turns_left == 4
-    { game, _tally } = Game.make_move(game, "d")
-    assert game.game_state == :bad_guess
-    assert game.turns_left == 3
-    { game, _tally } = Game.make_move(game, "e")
-    assert game.game_state == :bad_guess
-    assert game.turns_left == 2
-    { game, _tally } = Game.make_move(game, "f")
-    assert game.game_state == :bad_guess
-    assert game.turns_left == 1
-    { game, _tally } = Game.make_move(game, "g")
-    assert game.game_state == :lost
-    assert game.turns_left == 1
+    final_game = Enum.reduce(moves, game, fn (move, game) ->
+      Game.make_move(game, move) |> elem(0) end)
+    assert final_game.game_state == :lost
+    assert final_game.turns_left == 1
   end
 
 end
