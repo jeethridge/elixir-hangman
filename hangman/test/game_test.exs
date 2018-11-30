@@ -71,4 +71,12 @@ defmodule GameTest do
     assert final_game.turns_left == 1
   end
 
+  test "tally contains letter used" do
+    moves = String.codepoints("helo")
+    game = Game.new_game("helloz")
+    final_game = Enum.reduce(moves, game, fn (move, game) ->
+      Game.make_move(game, move) end)
+    tally = Game.tally(final_game)
+    assert tally.letters_guessed == "e,h,l,o"
+  end
 end
