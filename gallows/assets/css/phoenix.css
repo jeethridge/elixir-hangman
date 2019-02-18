@@ -62,7 +62,7 @@ select {
 }
 
 /* Phoenix promo and logo */
-.phx-hero {
+.gallows-hero {
   text-align: center;
   border-bottom: 1px solid #e3e3e3;
   background: #eee;
@@ -72,7 +72,7 @@ select {
   font-weight: 200;
   font-size: 120%;
 }
-.phx-hero p {
+.gallows-hero p {
   margin: 0;
 }
 .phx-logo {
