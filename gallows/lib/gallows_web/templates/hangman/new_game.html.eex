@@ -3,9 +3,3 @@
   <p>A Phoenix app for Hangman</p>
   <img src="<%= Routes.static_path(@conn, "/images/gallows.jpg") %>">
 </section>
-<div class = alert-info>
-  <%= node() %>
-</div>
-<div>
-  <%= plural_of(@produce, @count) %>
-</div>
