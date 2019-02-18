@@ -1,5 +1,7 @@
 <section class="gallows-hero">
-  <h1><%= gettext "Welcome to %{name}", name: "Gallows" %></h1>
+  <h1><%= gettext "Welcome to Gallows" %></h1>
   <p>A Phoenix app for Hangman</p>
-  <img src="<%= Routes.static_path(@conn, "/images/gallows.jpg") %>">
+  <img src="<%= Routes.static_path(@conn, "/images/gallows.jpg") %>"/>
+  <div><%= button("Enter the  Gallows", to: "/hangman")%></div>
+  <!--TODO: use helper hangman_path(@conn, :create_game)-->
 </section>
