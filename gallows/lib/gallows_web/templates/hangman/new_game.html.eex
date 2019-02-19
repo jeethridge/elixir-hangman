@@ -2,5 +2,5 @@
   <h1><%= gettext "Welcome to Gallows" %></h1>
   <p>A Phoenix app for Hangman</p>
   <img src="<%= Routes.static_path(@conn, "/images/gallows.jpg") %>"/>
-  <div><%= button("Enter the  Gallows", to: Routes.hangman_path(@conn, :create_game))%></div>
+  <div><%= new_game_button(@conn)%></div>
 </section>
