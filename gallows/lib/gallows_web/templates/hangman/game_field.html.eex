@@ -1,17 +1,13 @@
-<h1>Game Field</h1>
-<%= game_state(@tally.game_state) %>
-<br/>
-<p>
-Turns left: <%= @tally.turns_left%><br/>
-Word so far: <%= @tally.letters |> Enum.join(" ")%><br/>
-Letters Gussed: <%= @tally.letters_guessed%><br/>
-</p>
-
-<%= if game_over?(@tally) do %>
-    <%= new_game_button(@conn) %>
-<% else %>
-    <%= form_for(@conn, Routes.hangman_path(@conn, :make_move), [as: :make_move, method: :put], fn f -> %>
-         <%= text_input(f, :guess) %>
-         <%= submit("Make next move") %>
-    <% end) %>
-<% end %>
+<div class="container"> 
+    <div class="row">
+        <%= game_state(@tally.game_state) %>
+    </div>
+    <div class="row">
+        <div class="col">
+            <%= render("_gallows.html", left: @tally.turns_left) %>
+        </div>
+        <div class="col">
+            <%= render("_status.html", tally: @tally, conn: @conn) %>
+        </div>
+    </div>
+<div>

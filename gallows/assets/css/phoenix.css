@@ -547,7 +547,7 @@ h6 {
 
 .container {
   margin: 0 auto;
-  max-width: 80rem;
+  max-width: 100%;
   padding: 0 2rem;
   position: relative;
   width: 100%;
@@ -604,63 +604,3 @@ select {
 .gallows-hero p {
   margin: 0;
 }
-.phx-logo {
-  min-width: 300px;
-  margin: 1rem;
-  display: block;
-}
-.phx-logo img {
-  width: auto;
-  display: block;
-}
-
-/* Headers */
-header {
-  width: 100%;
-  background: #fdfdfd;
-  border-bottom: 1px solid #eaeaea;
-  margin-bottom: 2rem;
-}
-header section {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-header section :first-child {
-  order: 2;
-}
-header section :last-child {
-  order: 1;
-}
-header nav ul,
-header nav li {
-  margin: 0;
-  padding: 0;
-  display: block;
-  text-align: right;
-  white-space: nowrap;
-}
-header nav ul {
-  margin: 1rem;
-  margin-top: 0;
-}
-header nav a {
-  display: block;
-}
-
-@media (min-width: 40rem) {
-  /* Small devices (landscape phones, 576px and up) */
-  header section {
-    flex-direction: row;
-  }
-  header nav ul {
-    margin: 1rem;
-  }
-  .phx-logo {
-    flex-basis: 527px;
-    margin: 2rem 1rem;
-  }
-}
-
-/* This file is for your main application css. */

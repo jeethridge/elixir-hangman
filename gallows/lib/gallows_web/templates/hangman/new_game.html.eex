@@ -1,6 +1,8 @@
-<section class="gallows-hero">
-  <h1><%= gettext "Welcome to Gallows" %></h1>
-  <p>A Phoenix app for Hangman</p>
-  <img src="<%= Routes.static_path(@conn, "/images/gallows.jpg") %>"/>
-  <div><%= new_game_button(@conn)%></div>
-</section>
+<div class="container">
+  <section class="gallows-hero">
+    <h1><%= gettext "Welcome to Gallows" %></h1>
+    <p>A Phoenix app for Hangman</p>
+    <img src="<%= Routes.static_path(@conn, "/images/gallows.jpg") %>"/>
+    <div><%= new_game_button(@conn)%></div>
+  </section>
+</div>
