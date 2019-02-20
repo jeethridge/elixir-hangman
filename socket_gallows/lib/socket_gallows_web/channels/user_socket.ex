@@ -5,6 +5,7 @@ defmodule SocketGallowsWeb.UserSocket do
   channel "hangman:*", SocketGallowsWeb.HangmanChannel
 
   def connect(_params, socket, _connect_info) do
+    IO.puts("User socket connection opened.")
     {:ok, socket}
   end
 
