@@ -1,1 +1,19 @@
-Hangman Socket
+<div id="app">
+  <div v-bind:class="'alert alert-' + game_state_class">
+    {{ game_state_message }}
+  </div>
+  
+  <div class="container" >
+    <div class="row">
+      <div class="col-sm-6"> 
+        <div class="content">
+          <%=  render "_gallows.html" %>    
+        </div>
+      </div>
+      <div class="col-sm-2"> 
+        <%=  render "_status.html" %>
+      </div>
+    </div>
+  </div>
+</div>
+
