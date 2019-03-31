@@ -1,4 +1,4 @@
-A simple Hangan game written in elixir. Based on the course [Elixir for Programmers](https://codestool.coding-gnome.com/courses/elixir-for-programmers), by Dave Thomas.
+A simple Hangman game written in elixir. Based on the course [Elixir for Programmers](https://codestool.coding-gnome.com/courses/elixir-for-programmers), by Dave Thomas.
 
 ## Running the Project
 
@@ -10,7 +10,7 @@ $ mix run -e TextClient.start
 ```
 
 # Running the tests
-As of now thers is no comprehensive way to run all of the tests. In order to run the tests in each project you must cd into the project directory and run `mix test`. E.g.
+As of now there is no comprehensive way to run all of the tests. In order to run the tests in each project you must cd into the project directory and run `mix test`. E.g.
 
 ```
 $ cd elixir-hangman/hangman
